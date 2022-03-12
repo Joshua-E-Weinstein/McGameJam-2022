@@ -717,6 +717,11 @@ PrefabInstance:
       propertyPath: m_Points.Array.data[6].y
       value: -0.99950004
       objectReference: {fileID: 0}
+    - target: {fileID: 7590337722725095864, guid: c1f9c06855d90d3468c3afab8bc74498,
+        type: 3}
+      propertyPath: m_CornerAngleThreshold
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7590337722725095865, guid: c1f9c06855d90d3468c3afab8bc74498,
         type: 3}
       propertyPath: m_DynamicOccludee
@@ -1749,7 +1754,7 @@ PrefabInstance:
     - target: {fileID: 7590337722725095864, guid: c1f9c06855d90d3468c3afab8bc74498,
         type: 3}
       propertyPath: m_CornerAngleThreshold
-      value: 89
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7590337722725095864, guid: c1f9c06855d90d3468c3afab8bc74498,
         type: 3}
@@ -2005,8 +2010,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7590337722725095864, guid: c1f9c06855d90d3468c3afab8bc74498,
         type: 3}
+      propertyPath: m_UTess2D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590337722725095864, guid: c1f9c06855d90d3468c3afab8bc74498,
+        type: 3}
+      propertyPath: m_StretchUV
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590337722725095864, guid: c1f9c06855d90d3468c3afab8bc74498,
+        type: 3}
       propertyPath: m_CornerAngleThreshold
-      value: 89
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7590337722725095864, guid: c1f9c06855d90d3468c3afab8bc74498,
         type: 3}
@@ -2038,6 +2053,11 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 1.2500001
       objectReference: {fileID: 0}
+    - target: {fileID: 7590337722725095865, guid: c1f9c06855d90d3468c3afab8bc74498,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 106089fef6b03cb40b9b2724c368740f, type: 2}
     - target: {fileID: 7590337722725095867, guid: c1f9c06855d90d3468c3afab8bc74498,
         type: 3}
       propertyPath: m_Name
