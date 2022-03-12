@@ -432,6 +432,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b1ff2e4b57ede47b999b14b36213c7, type: 3}
+--- !u!1 &918903912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772599108767897160, guid: e1b1ff2e4b57ede47b999b14b36213c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 246900876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &918903913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2772599108767897167, guid: e1b1ff2e4b57ede47b999b14b36213c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 246900876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918903912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3fb7c6f5069774fbce5928994dca05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &918903915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918903912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bbbe0a1f3db2744b1e201e46c5b287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  caveGenerator: {fileID: 918903913}
+  wallMaterial: {fileID: 2100000, guid: b1a38e1e5f66beb44a0960ff499ccb0c, type: 2}
 --- !u!1 &1129107386
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,9 +577,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallMaterial: {fileID: 2100000, guid: b1a38e1e5f66beb44a0960ff499ccb0c, type: 2}
   player: {fileID: 1129107386}
-  rippleMaxDistance: 15
+  rippleMaxDistance: 16
   rippleDuration: 0.2
-  fadeDuration: 0.15
+  fadeDuration: 0.4
   rippleCenter: _Ripple_Center
   rippleDistance: _Ripple_Distance
   fadeAmount: _Fade_Amount

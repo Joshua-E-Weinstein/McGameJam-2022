@@ -14,7 +14,7 @@ namespace McgillTeam3
         const float MAX_RADIUS = 1.5f; // How broad the tunnel must be at maximum
 
         float scrollPos = 0f;
-        float speed = 0.1f;
+        public float speed;
 
         [SerializeField] SpriteShapeController[] topChunks;
         [SerializeField] SpriteShapeController[] bottomChunks;
@@ -27,6 +27,7 @@ namespace McgillTeam3
         // Start is called before the first frame update
         void Start()
         {
+            speed = 0.1f;
             // Generates 6 chunks with no slope which comprise the starting area
             foreach (SpriteShapeController chunk in topChunks) prevTop = GenerateTop(chunk.spline, prevTop, new Vector2(), new Vector2(caveRadius[0], caveRadius[1]));
             foreach (SpriteShapeController chunk in bottomChunks) prevBottom = GenerateBottom(chunk.spline, prevBottom, new Vector2(), new Vector2(caveRadius[0], caveRadius[1]));

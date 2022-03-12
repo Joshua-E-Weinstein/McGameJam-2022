@@ -20,9 +20,19 @@ namespace McgillTeam3
 
         private Echolocation _echolocation;
 
+        float time = 0;
+        float rippleStartValue;
+        float fadeStartValue;
+
         private void Awake()
         {
             _echolocation = player.GetComponent<Echolocation>();
+        }
+
+        private void Start()
+        {
+            rippleStartValue = wallMaterial.GetFloat(rippleDistance);
+            fadeStartValue = wallMaterial.GetFloat(fadeAmount);
         }
 
         private void OnEnable()
@@ -39,47 +49,42 @@ namespace McgillTeam3
 
         private void OnStartEcholocate()
         {
-            StartCoroutine("Echolocating");
+            time = 0;
+            wallMaterial.SetFloat(fadeAmount, 0);
+            rippleStartValue = wallMaterial.GetFloat(rippleDistance);
+            _echolocating = true;
         }
 
         private void OnEndEcholocate()
         {
-            StartCoroutine("Blinding");
-        }
-
-        IEnumerator Echolocating()
-        {
-            _echolocating = true;
-            wallMaterial.SetFloat(fadeAmount, 0f);
-            float time = 0;
-            float rippleStartValue = wallMaterial.GetFloat(rippleDistance);
-            while (_echolocating  && time < rippleDuration)
-            {
-                wallMaterial.SetFloat(rippleDistance, Mathf.Lerp(rippleStartValue, rippleMaxDistance, time / rippleDuration));
-                time += Time.deltaTime;
-                yield return null;
-            }
-            wallMaterial.SetFloat(rippleDistance, rippleMaxDistance);
-        }
-        
-        IEnumerator Blinding()
-        {
-            _echolocating = false;
-            float time = 0;
-            float fadeStartValue = wallMaterial.GetFloat(fadeAmount);
-            while (!_echolocating && time < fadeDuration)
-            {
-                wallMaterial.SetFloat(fadeAmount, Mathf.Lerp(fadeStartValue, 1, time / fadeDuration));
-                time += Time.deltaTime;
-                yield return null;
-            }
-            wallMaterial.SetFloat(fadeAmount, 1f);
-            wallMaterial.SetFloat(rippleDistance, 0f);
+            time = 0;
+            fadeStartValue = wallMaterial.GetFloat(fadeAmount);
+           _echolocating = false;
         }
         
         private void Update()
         {
             wallMaterial.SetVector(rippleCenter, player.transform.position);
+            // print(_echolocating);
+            // print(time);
+
+            if (_echolocating && time < rippleDuration){
+                wallMaterial.SetFloat(rippleDistance, Mathf.Lerp(rippleStartValue, rippleMaxDistance, time / rippleDuration));
+                time += Time.deltaTime;
+            }
+            else if (_echolocating && time >= rippleDuration){
+                wallMaterial.SetFloat(rippleDistance, rippleMaxDistance);
+            }
+            else if (!_echolocating && time < fadeDuration)
+            {
+                wallMaterial.SetFloat(fadeAmount, Mathf.Lerp(fadeStartValue, 1, time / fadeDuration));
+                time += Time.deltaTime;
+            }
+            else if (!_echolocating && time >= fadeDuration)
+            {
+                wallMaterial.SetFloat(fadeAmount, 1f);
+                wallMaterial.SetFloat(rippleDistance, 0);
+            }
         }
     }
 }
