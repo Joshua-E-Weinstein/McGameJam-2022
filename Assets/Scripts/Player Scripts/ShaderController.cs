@@ -31,8 +31,10 @@ namespace McgillTeam3
 
         private void Start()
         {
-            rippleStartValue = wallMaterial.GetFloat(rippleDistance);
-            fadeStartValue = wallMaterial.GetFloat(fadeAmount);
+            rippleStartValue = 0f;
+            fadeStartValue = 1f;
+            wallMaterial.SetFloat(rippleDistance, 0f);
+            wallMaterial.SetFloat(fadeAmount, 1f);
         }
 
         private void OnEnable()
@@ -65,6 +67,8 @@ namespace McgillTeam3
         private void Update()
         {
             wallMaterial.SetVector(rippleCenter, player.transform.position);
+
+
             // print(_echolocating);
             // print(time);
 

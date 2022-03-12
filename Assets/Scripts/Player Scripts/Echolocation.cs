@@ -20,6 +20,9 @@ namespace McgillTeam3
         
         private PlayerControls _playerControls;
 
+        private bool _yelling;
+        private bool _wasYelling;
+
         private void Awake()
         {
             _playerControls = new PlayerControls();
@@ -48,9 +51,32 @@ namespace McgillTeam3
             };
         }
 
-        public Vector3 GetPlayerPosition()
+        // Update is called once per frame
+        void Update()
         {
-            return transform.position;
+            float db = MicInput.MicLoudness;
+
+            if (db > 0.3f)
+            {
+                Debug.Log("ECHO");
+                _yelling = true;
+                if (!_wasYelling){
+                    _wasYelling = true;
+                    OnStartEcholocate();
+                }
+            }
+            else
+            {
+                Debug.Log("");
+                _yelling = false;
+                if (_wasYelling){
+                    _wasYelling = false;
+                    OnEndEcholocate();
+                }
+            }
+
+            //Debug.Log("Volume is " + MicInput.MicLoudness.ToString("##.#####") + ", decibels is :" + MicInput.MicLoudnessinDecibels.ToString("######"));
+            //Debug.Log("Volume is " + NormalizedLinearValue(MicInput.MicLoudness).ToString("#.####") + ", decibels is :" + NormalizedDecibelValue(MicInput.MicLoudnessinDecibels).ToString("#.####"));
         }
     }
 }
