@@ -13,8 +13,8 @@ namespace McgillTeam3
 
         private const int MIN_ENEMY_SPAWN = 5;
         private const int MAX_ENEMY_SPAWN = 10;
-        private const float MIN_ENEMY_RANGE = 5f;
-        private const float MAX_ENEMY_RANGE = 10f;
+        private const float MIN_ENEMY_RANGE = 2.5f;
+        private const float MAX_ENEMY_RANGE = 5f;
 
         [SerializeField]
         // Player controller will be used

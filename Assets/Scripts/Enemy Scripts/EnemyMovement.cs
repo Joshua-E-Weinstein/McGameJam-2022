@@ -7,7 +7,7 @@ namespace McgillTeam3
     public class EnemyMovement : MonoBehaviour
     {
         private const float TRACKING_TIME = 10f;
-        private const float SPEED = 20f;
+        private const float SPEED = 5f;
 
         private GameObject player;
         private bool isTracking;
@@ -23,7 +23,6 @@ namespace McgillTeam3
                 x = transform.position.x - player.transform.position.x,
                 y = transform.position.y - player.transform.position.y
             };
-            Debug.Log(distance);
             StartCoroutine(Track());
         }
 
@@ -45,7 +44,8 @@ namespace McgillTeam3
                 y = player.transform.position.y + distance.y
             };
 
-            transform.position = newPosition;
+            float step = SPEED * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, newPosition, step);
         }
 
         void MoveTo()
