@@ -16,7 +16,7 @@ namespace McgillTeam3
         [SerializeField] private string rippleDistance = "_Ripple_Distance";
         [SerializeField] private string fadeAmount = "_Fade_Amount";
 
-        private bool _echolocating;
+        public bool _echolocating;
 
         private Echolocation _echolocation;
 

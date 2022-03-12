@@ -55,7 +55,7 @@ Material:
     - _Triangle_Size: 2.65
     m_Colors:
     - _Inner_Color: {r: 0.022908926, g: 1, b: 0, a: 0}
-    - _Offset: {r: 21.600046, g: 0, b: 0, a: 0}
+    - _Offset: {r: 244.40572, g: 0, b: 0, a: 0}
     - _Other_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Outer_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Ripple_Center: {r: -5.9, g: 0, b: 0, a: 0}

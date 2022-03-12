@@ -24,20 +24,20 @@ namespace McgillTeam3
         private GameObject enemy;
 
         private bool isEventRunning;
+        private ShaderController shaderController;
 
         // Start is called before the first frame update
         void Start()
         {
             isEventRunning = false;
+            shaderController = player.GetComponent<ShaderController>();
             StartCoroutine(Run());
         }
 
         private void Update()
         {
-            bool isEcholocating = Input.GetMouseButtonDown(0);
-
             // check if event is running and we are echolocating (Check Input or Player class? ).
-            if (isEventRunning && isEcholocating)
+            if (isEventRunning && shaderController._echolocating)
                 SpawnEnemies();
         }
 
