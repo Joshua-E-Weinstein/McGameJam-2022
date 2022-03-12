@@ -8,13 +8,13 @@ namespace McgillTeam3.Player_Scripts
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private int _currentScore;
         [SerializeField] private int _highScore;
-        [SerializeField] private float _elapsedTime;
         [SerializeField] private int _scoreMultiplier = 1;
 
         [field: SerializeField] public bool EnableScoreCounting { get; set; } 
 
+        private float _elapsedTime;
         private float _timeSinceAwake;
-
+        
         public int CurrentScore
         { 
             get => _currentScore;
@@ -64,5 +64,7 @@ namespace McgillTeam3.Player_Scripts
 
             return true;
         }
+
+        public int GetHighScore() => _highScore;
     }
 }
