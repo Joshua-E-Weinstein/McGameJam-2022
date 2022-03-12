@@ -35,6 +35,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Approach"",
+                    ""type"": ""Value"",
+                    ""id"": ""933a651b-b4ad-4744-b84a-1f25365a28ea"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -48,6 +57,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Echolocate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ffa10ef-88a5-4b1f-9943-446a9957f4c0"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse+Keyboard"",
+                    ""action"": ""Approach"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +77,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // Echolocation
         m_Echolocation = asset.FindActionMap("Echolocation", throwIfNotFound: true);
         m_Echolocation_Echolocate = m_Echolocation.FindAction("Echolocate", throwIfNotFound: true);
+        m_Echolocation_Approach = m_Echolocation.FindAction("Approach", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -117,11 +138,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Echolocation;
     private IEcholocationActions m_EcholocationActionsCallbackInterface;
     private readonly InputAction m_Echolocation_Echolocate;
+    private readonly InputAction m_Echolocation_Approach;
     public struct EcholocationActions
     {
         private @PlayerControls m_Wrapper;
         public EcholocationActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Echolocate => m_Wrapper.m_Echolocation_Echolocate;
+        public InputAction @Approach => m_Wrapper.m_Echolocation_Approach;
         public InputActionMap Get() { return m_Wrapper.m_Echolocation; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -134,6 +157,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Echolocate.started -= m_Wrapper.m_EcholocationActionsCallbackInterface.OnEcholocate;
                 @Echolocate.performed -= m_Wrapper.m_EcholocationActionsCallbackInterface.OnEcholocate;
                 @Echolocate.canceled -= m_Wrapper.m_EcholocationActionsCallbackInterface.OnEcholocate;
+                @Approach.started -= m_Wrapper.m_EcholocationActionsCallbackInterface.OnApproach;
+                @Approach.performed -= m_Wrapper.m_EcholocationActionsCallbackInterface.OnApproach;
+                @Approach.canceled -= m_Wrapper.m_EcholocationActionsCallbackInterface.OnApproach;
             }
             m_Wrapper.m_EcholocationActionsCallbackInterface = instance;
             if (instance != null)
@@ -141,6 +167,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Echolocate.started += instance.OnEcholocate;
                 @Echolocate.performed += instance.OnEcholocate;
                 @Echolocate.canceled += instance.OnEcholocate;
+                @Approach.started += instance.OnApproach;
+                @Approach.performed += instance.OnApproach;
+                @Approach.canceled += instance.OnApproach;
             }
         }
     }
@@ -148,5 +177,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IEcholocationActions
     {
         void OnEcholocate(InputAction.CallbackContext context);
+        void OnApproach(InputAction.CallbackContext context);
     }
 }
