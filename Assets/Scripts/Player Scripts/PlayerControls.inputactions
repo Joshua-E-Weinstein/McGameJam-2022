@@ -1,0 +1,34 @@
+{
+    "name": "Echolocation",
+    "maps": [
+        {
+            "name": "Echolocation",
+            "id": "a9b6e75b-a1f6-46cc-971e-4b24509a8bcd",
+            "actions": [
+                {
+                    "name": "Echolocate",
+                    "type": "Button",
+                    "id": "e99cdd7e-0358-4e10-b412-e0465866693e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0c26eb54-bde6-4b3d-b411-fc1fe9ce873f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Echolocate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
