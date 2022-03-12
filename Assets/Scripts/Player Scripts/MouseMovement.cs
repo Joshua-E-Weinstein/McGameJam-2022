@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace McgillTeam3
 {
@@ -15,9 +17,17 @@ namespace McgillTeam3
 
         private float move_speed = 0f;
 
+        private Vector2 _targetPos = Vector2.zero;
+
+
+        void OnApproach(InputValue value)
+        {
+            _targetPos = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
+        }
+
         void Update()
         {
-            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; // Direction towards the mouse.
+            Vector2 direction = _targetPos - (Vector2) transform.position; // Direction towards the mouse.
 
             if (direction.magnitude >= idle_distance){ // Mouse outside idle
                 // Increase move speed.
