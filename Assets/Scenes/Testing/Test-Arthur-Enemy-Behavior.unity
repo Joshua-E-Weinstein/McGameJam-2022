@@ -135,20 +135,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5407311749624358969, guid: 999761c62ce7d8b4db47eba35250e46a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7181223647760757499, guid: 999761c62ce7d8b4db47eba35250e46a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16083205
+      value: 0.160832
       objectReference: {fileID: 0}
     - target: {fileID: 7181223647760757499, guid: 999761c62ce7d8b4db47eba35250e46a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000018097058
+      value: 0.00000005885653
       objectReference: {fileID: 0}
     - target: {fileID: 7181223647760757499, guid: 999761c62ce7d8b4db47eba35250e46a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.9489833e-10
+      value: -0.000000009590869
       objectReference: {fileID: 0}
     - target: {fileID: 8570453996517728606, guid: 999761c62ce7d8b4db47eba35250e46a,
         type: 3}
@@ -432,6 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 990934660}
+  enemy: {fileID: 1351940055435132221, guid: caaacecdb24770645b7fb55845fa0b67, type: 3}
 --- !u!1 &337953647
 GameObject:
   m_ObjectHideFlags: 0
