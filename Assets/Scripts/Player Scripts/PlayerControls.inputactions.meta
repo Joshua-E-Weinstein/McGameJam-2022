@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 22160ec2dae75474a834416ffee21fe5
+guid: 29b2cb7df8601284896ec749406023d4
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,4 +11,4 @@ ScriptedImporter:
   generateWrapperCode: 1
   wrapperCodePath: 
   wrapperClassName: 
-  wrapperCodeNamespace: McgillTeam3
+  wrapperCodeNamespace: 
