@@ -12,13 +12,18 @@ namespace McgillTeam3
         [SerializeField]
         private AudioClip deathClip;
 
-        private const float TRACKING_TIME = 10f;
+        [SerializeField]
+        private SpriteRenderer spriteRenderer;
+
+        private const float TRACKING_TIME = 5f;
+        private const int GLOW_COUNT = 5;
         private const float SPEED = 5f;
 
         private GameObject player;
         private bool isTracking;
         private Vector3 distance;
         private Vector3 lastPosition;
+
 
         // Start is called before the first frame update
         void Start()
@@ -52,15 +57,22 @@ namespace McgillTeam3
 
             float step = SPEED * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, newPosition, step);
+
+            Vector3 scale = transform.localScale;
+            if (transform.position.x < player.transform.position.x && scale.x < 0)
+                scale.x = -scale.x;
+            if (transform.position.x > player.transform.position.x && scale.x > 0)
+                scale.x = -scale.x;
+            transform.localScale = scale;
         }
 
         void MoveTo()
         {
             float step = SPEED * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, lastPosition, step);
-            transform.LookAt(lastPosition);
+            print(lastPosition);
 
-            if (Vector3.Distance(transform.position, lastPosition) < 0.5f)
+            if (Vector3.Distance(transform.position, lastPosition) < 0.001f)
                 Die();
         }
 
@@ -75,7 +87,19 @@ namespace McgillTeam3
         IEnumerator Track()
         {
             isTracking = true;
-            yield return new WaitForSeconds(TRACKING_TIME);
+
+            const float INTERVAL = TRACKING_TIME / GLOW_COUNT / 2f;
+            Color oldColor = spriteRenderer.color;
+
+            for (int i = 0; i < GLOW_COUNT; i++)
+            {
+                spriteRenderer.color = new Color(oldColor.r, oldColor.g + 255f, oldColor.b, oldColor.a);
+                yield return new WaitForSeconds(INTERVAL);
+                spriteRenderer.color = oldColor;
+                yield return new WaitForSeconds(INTERVAL);
+                print($"Done {INTERVAL}");
+            }
+
             lastPosition = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
             isTracking = false;
         }

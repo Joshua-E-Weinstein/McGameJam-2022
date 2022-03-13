@@ -5,9 +5,6 @@ namespace McgillTeam3
 {
     public class Echolocation : MonoBehaviour
     {
-
-        [SerializeField] private AudioClip sonarClip;
-
         #region Events
 
         public delegate void StartEcholocate();
@@ -45,11 +42,7 @@ namespace McgillTeam3
         {
             _playerControls.Echolocation.Echolocate.started += _ =>
             {
-                if (OnStartEcholocate != null)
-                {
-                    OnStartEcholocate();
-                    SoundManager.Instance.PlayClip("sonar", sonarClip, true, 0.1f);
-                }
+                if (OnStartEcholocate != null) OnStartEcholocate();
             };
             _playerControls.Echolocation.Echolocate.canceled += _ =>
             {

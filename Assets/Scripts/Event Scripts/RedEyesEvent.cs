@@ -107,9 +107,8 @@ namespace McgillTeam3
                 float positionX = Random.Range(0f, 1f) < 0.5 ? player.transform.position.x + distanceX : player.transform.position.x - distanceX;
                 float positionY = Random.Range(0f, 1f) < 0.5 ? player.transform.position.y + distanceY : player.transform.position.y - distanceY;
                 Vector3 position = new Vector3(positionX, positionY);
-                Quaternion rotation = Quaternion.LookRotation(player.transform.position, player.transform.position);
                 
-                Instantiate(enemy, position, rotation);
+                Instantiate(enemy, position, Quaternion.identity);
             }
 
             SoundManager.Instance.PlayClip("screech", screech);

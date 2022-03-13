@@ -286,6 +286,10 @@ MonoBehaviour:
   rippleCenter: _Ripple_Center
   rippleDistance: _Ripple_Distance
   fadeAmount: _Fade_Amount
+  sonarClip: {fileID: 8300000, guid: 73dda4f0d7049d840a6ea6d4ca9f2c92, type: 3}
+  _echolocating: 0
+  breathBar: {fileID: 0}
+  breathBarImage: {fileID: 0}
 --- !u!114 &532300548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,4 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5ffff12ec4ab74b98b51c594e5309f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 387032670}
+  playerAnimator: {fileID: 0}
+  heartAnimators: []
+  HP: 0

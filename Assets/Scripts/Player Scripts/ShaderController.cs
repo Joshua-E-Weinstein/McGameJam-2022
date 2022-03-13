@@ -16,6 +16,7 @@ namespace McgillTeam3
         [SerializeField] private string rippleCenter= "_Ripple_Center";
         [SerializeField] private string rippleDistance = "_Ripple_Distance";
         [SerializeField] private string fadeAmount = "_Fade_Amount";
+        [SerializeField] private AudioClip sonarClip;
 
         public bool _echolocating;
 
@@ -59,6 +60,7 @@ namespace McgillTeam3
         private void OnStartEcholocate()
         {
             if (currentBreath > 0 && !breathless){
+                SoundManager.Instance.PlayClip("sonar", sonarClip, true, 0.1f);
                 time = 0;
                 wallMaterial.SetFloat(fadeAmount, 0);
                 rippleStartValue = wallMaterial.GetFloat(rippleDistance);
