@@ -374,6 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1770850254}
   beginText: {fileID: 1092467064}
+  score: {fileID: 1770850264}
 --- !u!1 &884613271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3074989936884132024, guid: e1b1ff2e4b57ede47b999b14b36213c7,
@@ -954,10 +955,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c373345cba8d240b08c3c5af914181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 6034695415901208698}
-  highScore: 0
-  scoreMultiplier: 10
-  <EnableScoreCounting>k__BackingField: 1
+  _scoreText: {fileID: 6034695415901208698}
+  _currentScore: 0
+  _highScore: 0
+  _scoreMultiplier: 10
+  <EnableScoreCounting>k__BackingField: 0
 --- !u!1 &2080419753
 GameObject:
   m_ObjectHideFlags: 0

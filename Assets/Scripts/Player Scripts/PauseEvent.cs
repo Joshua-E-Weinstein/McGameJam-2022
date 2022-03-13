@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using McgillTeam3.Player_Scripts;
 using UnityEngine;
 
 namespace McgillTeam3
@@ -8,6 +9,7 @@ namespace McgillTeam3
     {
         [SerializeField] private GameObject player;
         [SerializeField] private GameObject beginText;
+        [SerializeField] private Score score;
 
         private Echolocation _echolocation;
 
@@ -19,6 +21,8 @@ namespace McgillTeam3
         // Start is called before the first frame update
         void Start()
         {
+            score.CurrentScore = 0;
+            score.EnableScoreCounting = false;
             Time.timeScale = 0;
         }
 
@@ -34,6 +38,7 @@ namespace McgillTeam3
 
         private void OnStartEcholocate()
         {
+            score.EnableScoreCounting = true;
             Time.timeScale = 1;
             gameObject.SetActive(false);
             beginText.SetActive(false);

@@ -16,7 +16,7 @@ namespace McgillTeam3
         {
             offset = Random.Range(0f, Mathf.PI);
             float size = Random.Range(0.75f, 1f);
-            sprite.flipX = Random.value > 0.5f;
+            sprite.flipX = (Random.value > 0.5f);
             gameObject.transform.localScale = new Vector3 (size, size, size);
             xPos = gameObject.transform.position.x;
         }

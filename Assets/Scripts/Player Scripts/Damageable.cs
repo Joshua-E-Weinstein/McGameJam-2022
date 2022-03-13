@@ -48,7 +48,8 @@ namespace McgillTeam3
         void Die()
         {
             score.UpdateHighScore();
-            score.CurrentScore = 0;
+            /*score.EnableScoreCounting = false;
+            score.ResetCurrentScore();*/
             SceneManager.LoadScene("GameOver");
         }
     }

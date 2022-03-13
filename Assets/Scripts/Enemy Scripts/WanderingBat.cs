@@ -39,7 +39,7 @@ namespace McgillTeam3
         void OnStartEcholocate(){
             if(!diving){
                 Vector2 distance = (Vector2) player.transform.position - (Vector2) gameObject.transform.position;
-                if (distance.magnitude < 12){
+                if (distance.magnitude < 8){
                     diving = true;
                     velocity = distance.normalized * 0.3f * SpeedController.speed;
                 }
