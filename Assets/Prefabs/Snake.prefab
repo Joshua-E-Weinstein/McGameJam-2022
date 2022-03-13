@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 3322572514702877530}
+  animator: {fileID: 3322572515821361804}
 --- !u!1 &3322572515821361907
 GameObject:
   m_ObjectHideFlags: 0

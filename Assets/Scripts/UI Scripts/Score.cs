@@ -5,67 +5,70 @@ namespace McgillTeam3.Player_Scripts
 {
     public class Score : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI scoreText;
-        public static int PlayerScore;
-        [SerializeField] private int highScore;
-        [SerializeField] private int scoreMultiplier = 10;
+        [SerializeField] private TextMeshProUGUI _scoreText;
+        [SerializeField] private int _currentScore;
+        [SerializeField] private int _highScore;
+        [SerializeField] private int _scoreMultiplier = 1;
 
-        [field: SerializeField] public bool EnableScoreCounting { get; set; } 
+        private float startTime;
+
+        private bool _enableScoreCounting;
+        [SerializeField] public bool EnableScoreCounting { 
+            get {
+                return _enableScoreCounting;
+            } 
+            set { 
+                _enableScoreCounting = value;
+                startTime = Time.time;
+                _scoreText.enabled = value;
+            }
+        } 
+
+        public static int PlayerScore = 0;
 
         private float _elapsedTime;
-        private float _timeSinceAwake;
         
         public int CurrentScore
         { 
-            get => PlayerScore;
+            get => _currentScore;
             set
             {
-                PlayerScore = value;
+                _currentScore = value;
                 UpdateScoreText();
             }
         }
 
         private void Start()
-        {
-            PlayerScore = 0;
+        {   
             UpdateScoreText(); // Also called here to set the score to the current score if changed in the inspector.
-            highScore = PlayerPrefs.GetInt("HighScore", 0);
-            scoreText.text = CurrentScore.ToString();
+            _highScore = PlayerPrefs.GetInt("HighScore", 0);
+            _scoreText.text = CurrentScore.ToString();
         }
 
         private void Update()
         {
-            if (!EnableScoreCounting)
-            {
-                _timeSinceAwake = Time.time;
-                return;
-            }
-
-            /*
-            The elapsed time is equal to the current time minus the time since this script awoke.
-            This is because Time.time begins counting at the time the script was first awoken, and we
-            do not necessarily want to start counting the score right away. 
-            */
-            _elapsedTime = Time.time - _timeSinceAwake;
-            CurrentScore = Mathf.FloorToInt(_elapsedTime * scoreMultiplier);
+            _elapsedTime = Time.time - startTime;
+            CurrentScore = Mathf.FloorToInt(_elapsedTime * _scoreMultiplier);
         }
 
         private void UpdateScoreText()
         {
-            scoreText.text = CurrentScore.ToString();
+            _scoreText.text = CurrentScore.ToString();
         }
         
         public bool UpdateHighScore()
         {
-            if (CurrentScore <= highScore)
+            PlayerScore = CurrentScore;
+
+            if (CurrentScore <= _highScore)
                 return false;
             
-            highScore = CurrentScore;
-            PlayerPrefs.SetInt("HighScore", highScore);
+            _highScore = CurrentScore;
+            PlayerPrefs.SetInt("HighScore", _highScore);
 
             return true;
         }
 
-        public int GetHighScore() => highScore;
+        public int GetHighScore() => _highScore;
     }
 }

@@ -11,6 +11,7 @@ namespace McgillTeam3
         float speed;
         Vector3 distance;
         bool jumped = false;
+        [SerializeField] Animator animator;
 
         // Start is called before the first frame update
         void Start()
@@ -27,6 +28,7 @@ namespace McgillTeam3
                 if (distance.magnitude < 5f){
                     rb2d.AddForce(20f * distance.normalized, ForceMode2D.Impulse);
                     jumped = true;
+                    animator.SetBool("Slither", true);
                 }
             }
         }
