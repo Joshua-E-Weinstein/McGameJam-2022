@@ -93,7 +93,7 @@ namespace McgillTeam3
 
             for (int i = 0; i < GLOW_COUNT; i++)
             {
-                spriteRenderer.color = new Color(oldColor.r, oldColor.g + 255f, oldColor.b, oldColor.a);
+                spriteRenderer.color = new Color(oldColor.r, oldColor.g + 230f, oldColor.b, oldColor.a);
                 yield return new WaitForSeconds(INTERVAL);
                 spriteRenderer.color = oldColor;
                 yield return new WaitForSeconds(INTERVAL);

@@ -238,9 +238,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1770850264}
     - target: {fileID: 532300548, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1296225841}
+    - target: {fileID: 532300548, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: tether
+      value: 
+      objectReference: {fileID: 1134642198}
+    - target: {fileID: 532300548, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
       propertyPath: damageSound
       value: 
       objectReference: {fileID: 8300000, guid: ec7e3ab82bf4bf74b93b5da0c0d916e6, type: 3}
+    - target: {fileID: 532300548, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 7836298003601819632, guid: e9073da42c07ac343987f8607fe2f83b,
+        type: 3}
     - target: {fileID: 532300548, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
       propertyPath: playerAnimator
       value: 
@@ -590,7 +603,7 @@ PrefabInstance:
     - target: {fileID: 3226844495130220386, guid: 691c9d663a9b12c48a5fc5d24159430a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3226844495130220386, guid: 691c9d663a9b12c48a5fc5d24159430a,
         type: 3}
@@ -615,17 +628,17 @@ PrefabInstance:
     - target: {fileID: 3226844495130220386, guid: 691c9d663a9b12c48a5fc5d24159430a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3226844495130220386, guid: 691c9d663a9b12c48a5fc5d24159430a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3226844495130220386, guid: 691c9d663a9b12c48a5fc5d24159430a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3226844495130220386, guid: 691c9d663a9b12c48a5fc5d24159430a,
         type: 3}
@@ -654,6 +667,12 @@ LineRenderer:
   m_CorrespondingSourceObject: {fileID: 3226844495130220385, guid: 691c9d663a9b12c48a5fc5d24159430a,
     type: 3}
   m_PrefabInstance: {fileID: 1134642197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1296225841 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 387032669, guid: 4e7d31601b4598b4aa73c936a647582a,
+    type: 3}
+  m_PrefabInstance: {fileID: 532300527}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1497346572
 PrefabInstance:
@@ -873,7 +892,7 @@ PrefabInstance:
     - target: {fileID: 5978560964199511225, guid: c4dbc552f306ed24a906dea3ebe415e2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5978560964199511225, guid: c4dbc552f306ed24a906dea3ebe415e2,
         type: 3}
@@ -959,7 +978,6 @@ MonoBehaviour:
   _currentScore: 0
   _highScore: 0
   _scoreMultiplier: 10
-  <EnableScoreCounting>k__BackingField: 0
 --- !u!1 &2080419753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,7 +2036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78242cf025c55864b988012593a6b0e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61ff59a4d5f289c40b5e8c48f0e8b5ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

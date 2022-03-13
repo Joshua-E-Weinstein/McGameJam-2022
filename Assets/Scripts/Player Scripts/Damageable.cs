@@ -8,7 +8,10 @@ namespace McgillTeam3
 {
     public class Damageable : MonoBehaviour
     {
+        [SerializeField] ParticleSystem deathParticles;
         [SerializeField] Animator playerAnimator;
+        [SerializeField] LineRenderer tether;
+        [SerializeField] SpriteRenderer sprite;
         [SerializeField] Animator[] heartAnimators;
         [SerializeField] AudioClip damageSound;
 
@@ -16,6 +19,7 @@ namespace McgillTeam3
         [SerializeField] private Score score;
         const float INVULN_DURATION = 2f;
         float invuln = 0.5f;
+        bool dead = false;
 
         void Start(){
             playerAnimator.SetBool("Invulnerable", false);
@@ -47,10 +51,24 @@ namespace McgillTeam3
 
         void Die()
         {
-            score.UpdateHighScore();
-            /*score.EnableScoreCounting = false;
-            score.ResetCurrentScore();*/
+            if (!dead){
+                dead = true;
+                score.UpdateHighScore();
+                sprite.enabled = false;
+                gameObject.GetComponent<MouseMovement>().enabled = false;
+                gameObject.GetComponent<Echolocation>().enabled = false;
+                tether.enabled = false;
+                StartCoroutine(GameOver());
+                Instantiate(deathParticles, transform.position, Quaternion.identity);
+                /*score.EnableScoreCounting = false;
+                score.ResetCurrentScore();*/
+            }
+        }
+
+        IEnumerator GameOver(){
+            yield return new WaitForSeconds (2f);
             SceneManager.LoadScene("GameOver");
+            yield return null;
         }
     }
 }
