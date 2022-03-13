@@ -45,7 +45,7 @@ namespace McgillTeam3
                 Vector2 distance = (Vector2) player.transform.position - (Vector2) gameObject.transform.position;
                 if (distance.magnitude < 8){
                     diving = true;
-                    velocity = distance.normalized * 0.3f * SpeedController.speed;
+                    velocity = distance.normalized * (0.2f * SpeedController.speed);
                 }
             }
         }

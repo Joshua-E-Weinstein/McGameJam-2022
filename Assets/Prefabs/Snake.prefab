@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3322572514702877529}
   - component: {fileID: 3322572514702877530}
   - component: {fileID: 3322572514702877531}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Snake
   m_TagString: Damaging
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3322572515821361806}
   - component: {fileID: 3322572515821361805}
   - component: {fileID: 3322572515821361804}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: SnakeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
