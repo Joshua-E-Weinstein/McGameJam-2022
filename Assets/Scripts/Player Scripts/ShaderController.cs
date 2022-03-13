@@ -17,6 +17,7 @@ namespace McgillTeam3
         [SerializeField] private string rippleDistance = "_Ripple_Distance";
         [SerializeField] private string fadeAmount = "_Fade_Amount";
         [SerializeField] private AudioClip sonarClip;
+        [SerializeField] private AudioClip decompression;
 
         public bool _echolocating;
 
@@ -107,6 +108,7 @@ namespace McgillTeam3
                 OnEndEcholocate();
                 breathless = true;
                 breathBarImage.color = new Color(1f, 0.3f, 0.3f, 1f);
+                SoundManager.Instance.PlayClip("Air Hiss", decompression, false, 0.5f);
             }
             if (breathless && currentBreath >= 0.5f * MAX_BREATH){
                 breathless = false;

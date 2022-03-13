@@ -10,6 +10,8 @@ namespace McgillTeam3
     {
         [SerializeField] Animator playerAnimator;
         [SerializeField] Animator[] heartAnimators;
+        [SerializeField] AudioClip damageSound;
+
         [SerializeField] public int HP;
         [SerializeField] private Score score;
         const float INVULN_DURATION = 2f;
@@ -35,6 +37,7 @@ namespace McgillTeam3
                     heartAnimators[HP].SetTrigger("LoseHeart");
                     if (HP <= 0) Die();
                     else {
+                        SoundManager.Instance.PlayClip("Hurt", damageSound, false, 0.5f);
                         invuln = INVULN_DURATION;
                         playerAnimator.SetBool("Invulnerable", true);
                     }

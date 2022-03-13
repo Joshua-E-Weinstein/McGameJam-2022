@@ -218,6 +218,10 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 532300530, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: decompression
+      value: 
+      objectReference: {fileID: 8300000, guid: 36638f9cb0fa7e34e81707d5b9bef5be, type: 3}
+    - target: {fileID: 532300530, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
       propertyPath: breathBarImage
       value: 
       objectReference: {fileID: 6034695415279391319}
@@ -233,6 +237,10 @@ PrefabInstance:
       propertyPath: score
       value: 
       objectReference: {fileID: 1770850264}
+    - target: {fileID: 532300548, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: damageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ec7e3ab82bf4bf74b93b5da0c0d916e6, type: 3}
     - target: {fileID: 532300548, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
       propertyPath: playerAnimator
       value: 
