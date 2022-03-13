@@ -27,6 +27,9 @@ namespace McgillTeam3
         [SerializeField]
         private ParticleSystem warningParticles;
 
+        [SerializeField]
+        private AudioClip screech;
+
         private bool isEventRunning;
         private bool isTrackingEcho;
         private ShaderController shaderController;
@@ -109,6 +112,7 @@ namespace McgillTeam3
                 Instantiate(enemy, position, rotation);
             }
 
+            SoundManager.Instance.PlayClip("screech", screech);
             StopEvent();
         }
     }

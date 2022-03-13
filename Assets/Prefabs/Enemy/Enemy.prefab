@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 7836298003601819632, guid: 957f6e6af7b2ea34e8b23c33cb4a6b17,
     type: 3}
+  deathClip: {fileID: 8300000, guid: 11f923df3840d9e42b500455b3ba0a17, type: 3}
 --- !u!1001 &6134879988120124373
 PrefabInstance:
   m_ObjectHideFlags: 0

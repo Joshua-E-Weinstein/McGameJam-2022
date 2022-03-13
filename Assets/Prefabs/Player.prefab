@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c5461b51af61b469aabdb70ced3369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonarClip: {fileID: 8300000, guid: 73dda4f0d7049d840a6ea6d4ca9f2c92, type: 3}
 --- !u!114 &532300530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,3 +220,4 @@ MonoBehaviour:
   rippleCenter: _Ripple_Center
   rippleDistance: _Ripple_Distance
   fadeAmount: _Fade_Amount
+  _echolocating: 0

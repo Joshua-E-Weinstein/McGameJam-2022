@@ -9,6 +9,9 @@ namespace McgillTeam3
         [SerializeField]
         private ParticleSystem deathParticles;
 
+        [SerializeField]
+        private AudioClip deathClip;
+
         private const float TRACKING_TIME = 10f;
         private const float SPEED = 5f;
 
@@ -64,6 +67,7 @@ namespace McgillTeam3
         void Die()
         {
             Instantiate(deathParticles, transform.position, Quaternion.identity);
+            SoundManager.Instance.PlayClip("enemy_death", deathClip, false, 0.1f);
 
             Object.Destroy(gameObject);
         }

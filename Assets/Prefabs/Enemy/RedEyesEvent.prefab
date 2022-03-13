@@ -48,6 +48,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy: {fileID: 1351940055435132221, guid: caaacecdb24770645b7fb55845fa0b67, type: 3}
   warningParticles: {fileID: 4483335632412011027}
+  screech: {fileID: 8300000, guid: 40db584713186c44e850e3f1d9a4037b, type: 3}
 --- !u!1001 &5978560962537385443
 PrefabInstance:
   m_ObjectHideFlags: 0

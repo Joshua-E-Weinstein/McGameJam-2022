@@ -55,9 +55,9 @@ Material:
     - _Triangle_Size: 2.65
     m_Colors:
     - _Inner_Color: {r: 0.022908926, g: 1, b: 0, a: 0}
-    - _Offset: {r: 122.298706, g: 0, b: 0, a: 0}
+    - _Offset: {r: 250.50609, g: 0, b: 0, a: 0}
     - _Other_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Outer_Color: {r: 0, g: 0, b: 0, a: 0}
-    - _Ripple_Center: {r: 1.2369584, g: 3.192965, b: 0, a: 0}
+    - _Ripple_Center: {r: -1.0955235, g: 4.302611, b: 0, a: 0}
     - _Ripple_Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
