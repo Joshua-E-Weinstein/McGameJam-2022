@@ -9,16 +9,12 @@ namespace McgillTeam3
     public class MouseMovement : MonoBehaviour
     {
         [SerializeField] Rigidbody2D rigidBody;
-        [SerializeField] private FloatReference idle_distance;
 
-        [SerializeField] private FloatReference acceleration;
-        [SerializeField] private FloatReference deceleration;
-        [SerializeField] private FloatReference max_move_speed;
-
-        private float move_speed = 0f;
+        private float move_speed = 2f;
 
         private Vector2 _targetPos = Vector2.zero;
 
+        [SerializeField] LineRenderer tether;
 
         void OnApproach(InputValue value)
         {
@@ -28,9 +24,18 @@ namespace McgillTeam3
         void Update()
         {
             Vector2 direction = _targetPos - (Vector2) transform.position; // Direction towards the mouse.
+
+            Vector2 point0 = _targetPos - 0.1f * direction.normalized;
+            tether.SetPosition(0, new Vector3(point0[0], point0[1], 5));
+
+            Vector2 point1 = (Vector2) transform.position + 0.5f * direction.normalized;
+            tether.SetPosition(1, new Vector3(point1[0], point1[1], 5));
+
+            if (direction.magnitude <= 0.6f && tether.enabled) tether.enabled = false;
+            else if (direction.magnitude > 0.6f && !tether.enabled) tether.enabled = true;
             
             // Update velocity towards mouse.
-            rigidBody.velocity = 2f * direction;
+            rigidBody.velocity = move_speed * direction;
         }
     }
 }
