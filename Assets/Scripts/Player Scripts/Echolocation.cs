@@ -58,7 +58,6 @@ namespace McgillTeam3
 
             if (db > 0.3f)
             {
-                Debug.Log("ECHO");
                 _yelling = true;
                 if (!_wasYelling){
                     _wasYelling = true;
@@ -67,7 +66,6 @@ namespace McgillTeam3
             }
             else
             {
-                Debug.Log("");
                 _yelling = false;
                 if (_wasYelling){
                     _wasYelling = false;
