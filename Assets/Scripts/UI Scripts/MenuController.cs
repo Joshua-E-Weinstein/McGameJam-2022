@@ -13,6 +13,7 @@ namespace McgillTeam3
         [SerializeField] private Slider volumeSlider = null;
         [SerializeField] private Slider microphoneSlider = null;
         [SerializeField] private Toggle microphoneToggle = null;
+        [SerializeField] private AudioClip clickClip = null;
         public static float micSensitivity = 0.3f;
         public static float micOverride = -1f;
         
@@ -39,6 +40,11 @@ namespace McgillTeam3
         public void ToggleMicrophone()
         {
             micOverride = microphoneToggle.isOn ? -1f : 2f;
+        }
+
+        public void PlayClick()
+        {
+            SoundManager.Instance.PlayClip("click", clickClip, false, 0.5f);
         }
     }
 }

@@ -35,6 +35,7 @@ namespace McgillTeam3
             if (backgroundSource == null)
                 backgroundSource = gameObject.AddComponent<AudioSource>();
 
+            backgroundSource.volume = 0.5f;
             backgroundSource.clip = background;
             backgroundSource.loop = true;
             backgroundSource.Play();
