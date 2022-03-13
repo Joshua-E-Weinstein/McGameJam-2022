@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Design-Scene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Menu.unity
+    guid: b15a2c9082cf17441817980a9c66fa33
+  - enabled: 1
+    path: Assets/Scenes/Jordan Shaders.unity
+    guid: cf3f0af006d44e243aa7d609ebe3cefb
   m_configObjects: {}

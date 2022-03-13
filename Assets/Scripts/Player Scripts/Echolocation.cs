@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace McgillTeam3
 {
@@ -54,11 +55,10 @@ namespace McgillTeam3
         // Update is called once per frame
         void Update()
         {
-            float db = MicInput.MicLoudness;
+            float loudness = MicInput.MicLoudness;
 
-            if (db > 0.3f)
+            if (loudness > MenuController.micSensitivity)
             {
-                Debug.Log("ECHO");
                 _yelling = true;
                 if (!_wasYelling){
                     _wasYelling = true;
@@ -67,16 +67,12 @@ namespace McgillTeam3
             }
             else
             {
-                Debug.Log("");
                 _yelling = false;
                 if (_wasYelling){
                     _wasYelling = false;
                     OnEndEcholocate();
                 }
             }
-
-            //Debug.Log("Volume is " + MicInput.MicLoudness.ToString("##.#####") + ", decibels is :" + MicInput.MicLoudnessinDecibels.ToString("######"));
-            //Debug.Log("Volume is " + NormalizedLinearValue(MicInput.MicLoudness).ToString("#.####") + ", decibels is :" + NormalizedDecibelValue(MicInput.MicLoudnessinDecibels).ToString("#.####"));
         }
     }
 }
