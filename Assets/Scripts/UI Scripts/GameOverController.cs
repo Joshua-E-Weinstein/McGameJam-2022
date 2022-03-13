@@ -14,6 +14,7 @@ namespace McgillTeam3
         [SerializeField] private string menu;
         [SerializeField] private TMP_Text yourScoreText = null;
         [SerializeField] private TMP_Text highScoreText;
+        [SerializeField] private AudioClip clickClip;
 
         private void Start()
         {
@@ -24,6 +25,7 @@ namespace McgillTeam3
         public void ContinueButton()
         {
             SceneManager.LoadScene(menu);
+            SoundManager.Instance.PlayClip("click", clickClip, false, 0.5f);
         }
     }
 }
