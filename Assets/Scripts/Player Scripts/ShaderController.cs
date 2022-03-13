@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace McgillTeam3
 {
@@ -19,6 +20,12 @@ namespace McgillTeam3
         private bool _echolocating;
 
         private Echolocation _echolocation;
+
+        const float MAX_BREATH = 2f;
+        [Range(0, MAX_BREATH)] float currentBreath = MAX_BREATH;
+        bool breathless;
+        [SerializeField] RectTransform breathBar;
+        [SerializeField] Image breathBarImage;
 
         float time = 0;
         float rippleStartValue;
@@ -51,10 +58,12 @@ namespace McgillTeam3
 
         private void OnStartEcholocate()
         {
-            time = 0;
-            wallMaterial.SetFloat(fadeAmount, 0);
-            rippleStartValue = wallMaterial.GetFloat(rippleDistance);
-            _echolocating = true;
+            if (currentBreath > 0 && !breathless){
+                time = 0;
+                wallMaterial.SetFloat(fadeAmount, 0);
+                rippleStartValue = wallMaterial.GetFloat(rippleDistance);
+                _echolocating = true;
+            }
         }
 
         private void OnEndEcholocate()
@@ -89,6 +98,19 @@ namespace McgillTeam3
                 wallMaterial.SetFloat(fadeAmount, 1f);
                 wallMaterial.SetFloat(rippleDistance, 0);
             }
+
+            if (_echolocating && currentBreath > 0) currentBreath -= Time.deltaTime;
+            else if (currentBreath < MAX_BREATH) currentBreath += (Time.deltaTime * 0.3f);
+            if (currentBreath < 0.01f) {
+                OnEndEcholocate();
+                breathless = true;
+                breathBarImage.color = new Color(1f, 0.3f, 0.3f, 1f);
+            }
+            if (breathless && currentBreath >= 0.5f * MAX_BREATH){
+                breathless = false;
+                breathBarImage.color = new Color(1f, 1f, 1f, 1f);
+            } 
+            breathBar.transform.localScale = new Vector3(currentBreath/MAX_BREATH, 1f, 1f);
         }
     }
 }
