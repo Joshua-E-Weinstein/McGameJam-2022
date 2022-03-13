@@ -70,7 +70,6 @@ namespace McgillTeam3
         {
             float step = SPEED * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, lastPosition, step);
-            print(lastPosition);
 
             if (Vector3.Distance(transform.position, lastPosition) < 0.001f)
                 Die();
@@ -97,7 +96,6 @@ namespace McgillTeam3
                 yield return new WaitForSeconds(INTERVAL);
                 spriteRenderer.color = oldColor;
                 yield return new WaitForSeconds(INTERVAL);
-                print($"Done {INTERVAL}");
             }
 
             lastPosition = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);

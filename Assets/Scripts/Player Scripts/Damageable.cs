@@ -36,13 +36,14 @@ namespace McgillTeam3
         void OnCollisionStay2D(Collision2D collision){
             {
                 if (invuln <= 0f){
-                    if (collision.gameObject.tag == "Damaging")
-                    HP -= 1;
-                    SoundManager.Instance.PlayClip("Hurt", damageSound, false, 0.5f);
+                    if (collision.gameObject.tag == "Damaging") {
+                        HP -= 1;
+                        SoundManager.Instance.PlayClip("Hurt", damageSound, false, 0.5f);
+                    }
                     if (HP >= 0) heartAnimators[HP].SetTrigger("LoseHeart");
+                    invuln = INVULN_DURATION;
                     if (HP <= 0) Die();
                     else {
-                        invuln = INVULN_DURATION;
                         playerAnimator.SetBool("Invulnerable", true);
                     }
                 }

@@ -10,6 +10,7 @@ namespace McgillTeam3
         Vector3 distance;
         Vector2 velocity;
         bool diving = false;
+        [SerializeField] private SpriteRenderer Renderer;
 
         // Start is called before the first frame update
         
@@ -33,7 +34,10 @@ namespace McgillTeam3
             }
             else gameObject.transform.position += (Vector3) velocity;
 
-            if (gameObject.transform.position.magnitude > 30) GameObject.Destroy(gameObject);
+            if (!Renderer.isVisible && transform.position.x < 0) {
+                GameObject.Destroy(gameObject);
+                Debug.Log("Culled");
+            }
         }
 
         void OnStartEcholocate(){
