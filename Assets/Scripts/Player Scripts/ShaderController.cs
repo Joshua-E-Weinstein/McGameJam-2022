@@ -100,7 +100,7 @@ namespace McgillTeam3
             }
 
             if (_echolocating && currentBreath > 0) currentBreath -= Time.deltaTime;
-            else if (currentBreath < MAX_BREATH) currentBreath += (Time.deltaTime * 0.3f);
+            else if (currentBreath < MAX_BREATH) currentBreath += (Time.deltaTime * 0.25f);
             if (currentBreath < 0.01f) {
                 OnEndEcholocate();
                 breathless = true;
