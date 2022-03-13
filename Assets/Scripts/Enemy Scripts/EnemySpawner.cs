@@ -8,6 +8,7 @@ namespace McgillTeam3
     {
         [SerializeField] GameObject spider;
         [SerializeField] GameObject bat;
+        [SerializeField] GameObject snake;
         float delay = 5f;
         // Start is called before the first frame update
         void Start()
@@ -21,7 +22,7 @@ namespace McgillTeam3
             delay -= Time.deltaTime;
 
             if (delay <= 0){
-                int enemyRoll = Random.Range(0, 2);
+                int enemyRoll = Random.Range(0, 3);
                 switch(enemyRoll){
                     case (0):
                         SpawnSpiders();
@@ -29,9 +30,10 @@ namespace McgillTeam3
                     case (1):
                         SpawnBats();
                         break;
+                    case (2):
+                        SpawnSnake();
+                        break;
                 }
-                
-
             }
         }
 
@@ -52,12 +54,17 @@ namespace McgillTeam3
             int count = Random.Range(1, 3);
             delay += 4 * (count + Random.Range(0, 3));
 
-            float spawnX = 12f;
+            float spawnX = 20f;
             while (count > 0){
                 GameObject.Instantiate(bat, new Vector3 (spawnX, Random.Range(-4f, 4f), -5), new Quaternion());
                 spawnX += Random.Range(2f, 4f);
                 count --;
             }
+        }
+
+        void SpawnSnake(){
+            delay += 8;
+            GameObject.Instantiate(snake, new Vector3 (24f, 4, -5), new Quaternion());
         }
     }
 }
