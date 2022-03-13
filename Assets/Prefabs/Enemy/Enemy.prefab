@@ -127,6 +127,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1715538883382070121}
+  - {fileID: 7678653921248840006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -144,3 +145,118 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 7836298003601819632, guid: 957f6e6af7b2ea34e8b23c33cb4a6b17,
     type: 3}
+--- !u!1001 &6134879988120124373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6889929594099046257}
+    m_Modifications:
+    - target: {fileID: 4145724585867345225, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_Name
+      value: Appear Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836298003601819632, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: VelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836298003601819632, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836298003601819632, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836298003601819632, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: VelocityModule.orbitalX.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836298003601819632, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: VelocityModule.orbitalY.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836298003601819632, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: VelocityModule.orbitalZ.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836298003601819632, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: VelocityModule.speedModifier.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836298003601819632, guid: 3d4818719b530d44faed3aee7944ee57,
+        type: 3}
+      propertyPath: VelocityModule.orbitalOffsetX.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d4818719b530d44faed3aee7944ee57, type: 3}
+--- !u!4 &7678653921248840006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4590144209427624595, guid: 3d4818719b530d44faed3aee7944ee57,
+    type: 3}
+  m_PrefabInstance: {fileID: 6134879988120124373}
+  m_PrefabAsset: {fileID: 0}
