@@ -34,7 +34,7 @@ namespace McgillTeam3
                 if (invuln <= 0f){
                     if (collision.gameObject.tag == "Damaging")
                     HP -= 1;
-                    heartAnimators[HP].SetTrigger("LoseHeart");
+                    if (HP >= 0) heartAnimators[HP].SetTrigger("LoseHeart");
                     if (HP <= 0) Die();
                     else {
                         SoundManager.Instance.PlayClip("Hurt", damageSound, false, 0.5f);

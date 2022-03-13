@@ -50,14 +50,14 @@ Material:
     - _Ripple_Size: 1
     - _Ripple_Smoothness: 20
     - _Smoothness: 1.5
-    - _Triangle_Density: 2
+    - _Triangle_Density: 1.5
     - _Triangle_Rotation_Jitter: 68
     - _Triangle_Size: 2.65
     m_Colors:
     - _Inner_Color: {r: 0.022908926, g: 1, b: 0, a: 0}
-    - _Offset: {r: 110.66088, g: 0, b: 0, a: 0}
+    - _Offset: {r: 30.222702, g: 0, b: 0, a: 0}
     - _Other_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Outer_Color: {r: 0, g: 0, b: 0, a: 0}
-    - _Ripple_Center: {r: -3.0067322, g: 0.754503, b: 0, a: 0}
+    - _Ripple_Center: {r: -1.3470024, g: 0.7445704, b: 0, a: 0}
     - _Ripple_Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

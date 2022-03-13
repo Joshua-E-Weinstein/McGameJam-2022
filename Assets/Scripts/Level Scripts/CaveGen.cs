@@ -10,11 +10,11 @@ namespace McgillTeam3
     {
         const float NOISE_AMPLITUDE = 2f; // Controls how big the stalagmites and stalactites are
         const int CHUNK_WIDTH = 8; // Controls the width of the cave chunks
-        const float MIN_RADIUS = 1f; // How broad the tunnel must be at minimum
-        const float MAX_RADIUS = 3f; // How broad the tunnel must be at maximum
+        const float MIN_RADIUS = 0.75f; // How broad the tunnel must be at minimum
+        const float MAX_RADIUS = 2.5f; // How broad the tunnel must be at maximum
 
         float scrollPos = 0f;
-        public float speed;
+        public static float speed;
 
         [SerializeField] SpriteShapeController[] topChunks;
         [SerializeField] SpriteShapeController[] bottomChunks;
