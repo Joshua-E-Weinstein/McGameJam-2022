@@ -10,6 +10,7 @@ namespace McgillTeam3
     public class MenuController : MonoBehaviour
     {
         [SerializeField] private string gameLevel;
+        [SerializeField] private string credits;
         [SerializeField] private Slider volumeSlider = null;
         [SerializeField] private Slider microphoneSlider = null;
         [SerializeField] private Toggle microphoneToggle = null;
@@ -24,6 +25,11 @@ namespace McgillTeam3
         public void QuitButton()
         {
             Application.Quit();
+        }
+        
+        public void CreditsButton()
+        {
+            SceneManager.LoadScene(credits);
         }
 
         public void SetVolume(float volume)
