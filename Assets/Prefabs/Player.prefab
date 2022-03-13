@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 319691881954110303}
   - component: {fileID: 532300529}
   - component: {fileID: 532300530}
+  - component: {fileID: 532300548}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -178,9 +179,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
+  m_Offset: {x: 0.05, y: 0.05}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.32
 --- !u!114 &5749248971577562286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,3 +286,15 @@ MonoBehaviour:
   rippleCenter: _Ripple_Center
   rippleDistance: _Ripple_Distance
   fadeAmount: _Fade_Amount
+--- !u!114 &532300548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749248972146751489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5ffff12ec4ab74b98b51c594e5309f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

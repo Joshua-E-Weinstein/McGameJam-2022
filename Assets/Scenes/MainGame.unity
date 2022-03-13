@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &387032670 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 387032670, guid: 4e7d31601b4598b4aa73c936a647582a,
+    type: 3}
+  m_PrefabInstance: {fileID: 532300527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &532300527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,10 +136,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387032669, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 387032669, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 387032669, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 532300548, guid: 4e7d31601b4598b4aa73c936a647582a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 387032670}
     - target: {fileID: 5749248972146751489, guid: 4e7d31601b4598b4aa73c936a647582a,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749248972146751492, guid: 4e7d31601b4598b4aa73c936a647582a,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5749248972146751494, guid: 4e7d31601b4598b4aa73c936a647582a,
         type: 3}
@@ -148,7 +175,7 @@ PrefabInstance:
     - target: {fileID: 5749248972146751494, guid: 4e7d31601b4598b4aa73c936a647582a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5749248972146751494, guid: 4e7d31601b4598b4aa73c936a647582a,
         type: 3}

@@ -40,11 +40,11 @@ Material:
     m_Floats:
     - _Echolocating: 0
     - _Edge: 0
-    - _Fade_Amount: 1
+    - _Fade_Amount: 0
     - _Is_Edge: 0
     - _Ring_Amount: 4
     - _Ripple_2_Distance: 1.07
-    - _Ripple_Distance: 0
+    - _Ripple_Distance: 16
     - _Ripple_Maximum_Distance: 50
     - _Ripple_Radius: 1.98
     - _Ripple_Size: 1
@@ -55,9 +55,9 @@ Material:
     - _Triangle_Size: 2.65
     m_Colors:
     - _Inner_Color: {r: 0.022908926, g: 1, b: 0, a: 0}
-    - _Offset: {r: 98.699066, g: 0, b: 0, a: 0}
+    - _Offset: {r: 26.700066, g: 0, b: 0, a: 0}
     - _Other_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Outer_Color: {r: 0, g: 0, b: 0, a: 0}
-    - _Ripple_Center: {r: -0.24458691, g: 1.3397284, b: 0, a: 0}
+    - _Ripple_Center: {r: -1.099617, g: 0.9072321, b: 0, a: 0}
     - _Ripple_Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
