@@ -82,7 +82,6 @@ namespace McgillTeam3
             isEventRunning = true;
             warningParticles.Clear();
             warningParticles.Play();
-            Debug.Log("RED EYE EVENT STARTED");
         }
 
         private void StopEvent()
@@ -93,7 +92,6 @@ namespace McgillTeam3
             isEventRunning = false;
             isTrackingEcho = false;
             warningParticles.Stop();
-            Debug.Log("RED EYE EVENT FINISHED");
         }
 
         private void SpawnEnemies()

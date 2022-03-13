@@ -7,6 +7,7 @@ namespace McgillTeam3
     public class PauseEvent : MonoBehaviour
     {
         [SerializeField] private GameObject player;
+        [SerializeField] private GameObject beginText;
 
         private Echolocation _echolocation;
 
@@ -35,6 +36,7 @@ namespace McgillTeam3
         {
             Time.timeScale = 1;
             gameObject.SetActive(false);
+            beginText.SetActive(false);
         }
     }
 }
