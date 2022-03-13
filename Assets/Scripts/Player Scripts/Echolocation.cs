@@ -21,6 +21,7 @@ namespace McgillTeam3
         
         private PlayerControls _playerControls;
 
+        float sensitivity = Math.Max(MenuController.micSensitivity, MenuController.micOverride);
         private bool _yelling;
         private bool _wasYelling;
 
@@ -56,8 +57,7 @@ namespace McgillTeam3
         void Update()
         {
             float loudness = MicInput.MicLoudness;
-
-            if (loudness > MenuController.micSensitivity)
+            if (loudness > sensitivity)
             {
                 _yelling = true;
                 if (!_wasYelling){

@@ -13,7 +13,8 @@ namespace McgillTeam3
         [SerializeField] private Slider volumeSlider = null;
         [SerializeField] private Slider microphoneSlider = null;
         [SerializeField] private Toggle microphoneToggle = null;
-        public static float micSensitivity = 0f;
+        public static float micSensitivity = 0.3f;
+        public static float micOverride = -1f;
         
         public void PlayButton()
         {
@@ -32,15 +33,12 @@ namespace McgillTeam3
         
         public void SetMicrophoneSensitivity(float sensitivity)
         {
-            if (microphoneToggle.isOn)
-            {
-                micSensitivity = sensitivity;
-            }
+            micSensitivity = 1 - sensitivity;
         }
 
         public void ToggleMicrophone()
         {
-            micSensitivity = microphoneToggle.isOn ? Single.PositiveInfinity : microphoneSlider.value;
+            micOverride = microphoneToggle.isOn ? -1f : 2f;
         }
     }
 }

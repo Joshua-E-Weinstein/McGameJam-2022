@@ -29,7 +29,6 @@ namespace McgillTeam3
             {
                 if (invuln <= 0f){
                     if (collision.gameObject.tag == "Damaging")
-                    print(collision.gameObject.name);
                     HP -= 1;
                     heartAnimators[HP].SetTrigger("LoseHeart");
                     if (HP <= 0) Die();
