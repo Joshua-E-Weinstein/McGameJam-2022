@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using McgillTeam3.Player_Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ namespace McgillTeam3
         [SerializeField] Animator playerAnimator;
         [SerializeField] Animator[] heartAnimators;
         [SerializeField] public int HP;
+        [SerializeField] private Score score;
         const float INVULN_DURATION = 2f;
         float invuln = 0.5f;
 
@@ -40,7 +42,10 @@ namespace McgillTeam3
             }
         }
 
-        void Die(){
+        void Die()
+        {
+            score.UpdateHighScore();
+            score.CurrentScore = 0;
             SceneManager.LoadScene("GameOver");
         }
     }

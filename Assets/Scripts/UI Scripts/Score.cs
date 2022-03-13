@@ -5,10 +5,10 @@ namespace McgillTeam3.Player_Scripts
 {
     public class Score : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _scoreText;
-        [SerializeField] private int _currentScore;
-        [SerializeField] private int _highScore;
-        [SerializeField] private int _scoreMultiplier = 1;
+        [SerializeField] private TextMeshProUGUI scoreText;
+        public static int PlayerScore;
+        [SerializeField] private int highScore;
+        [SerializeField] private int scoreMultiplier = 1;
 
         [field: SerializeField] public bool EnableScoreCounting { get; set; } 
 
@@ -17,19 +17,20 @@ namespace McgillTeam3.Player_Scripts
         
         public int CurrentScore
         { 
-            get => _currentScore;
+            get => PlayerScore;
             set
             {
-                _currentScore = value;
+                PlayerScore = value;
                 UpdateScoreText();
             }
         }
 
         private void Start()
         {
+            PlayerScore = 0;
             UpdateScoreText(); // Also called here to set the score to the current score if changed in the inspector.
-            _highScore = PlayerPrefs.GetInt("HighScore", 0);
-            _scoreText.text = CurrentScore.ToString();
+            highScore = PlayerPrefs.GetInt("HighScore", 0);
+            scoreText.text = CurrentScore.ToString();
         }
 
         private void Update()
@@ -46,25 +47,25 @@ namespace McgillTeam3.Player_Scripts
             do not necessarily want to start counting the score right away. 
             */
             _elapsedTime = Time.time - _timeSinceAwake;
-            CurrentScore = Mathf.FloorToInt(_elapsedTime * _scoreMultiplier);
+            CurrentScore = Mathf.FloorToInt(_elapsedTime * scoreMultiplier);
         }
 
         private void UpdateScoreText()
         {
-            _scoreText.text = CurrentScore.ToString();
+            scoreText.text = CurrentScore.ToString();
         }
         
         public bool UpdateHighScore()
         {
-            if (CurrentScore <= _highScore)
+            if (CurrentScore <= highScore)
                 return false;
             
-            _highScore = CurrentScore;
-            PlayerPrefs.SetInt("HighScore", _highScore);
+            highScore = CurrentScore;
+            PlayerPrefs.SetInt("HighScore", highScore);
 
             return true;
         }
 
-        public int GetHighScore() => _highScore;
+        public int GetHighScore() => highScore;
     }
 }
