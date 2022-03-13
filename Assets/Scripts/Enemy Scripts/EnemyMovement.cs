@@ -6,6 +6,9 @@ namespace McgillTeam3
 {
     public class EnemyMovement : MonoBehaviour
     {
+        [SerializeField]
+        private ParticleSystem deathParticles;
+
         private const float TRACKING_TIME = 10f;
         private const float SPEED = 5f;
 
@@ -52,9 +55,17 @@ namespace McgillTeam3
         {
             float step = SPEED * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, lastPosition, step);
+            transform.LookAt(lastPosition);
 
             if (Vector3.Distance(transform.position, lastPosition) < 0.5f)
-                Object.Destroy(gameObject);
+                Die();
+        }
+
+        void Die()
+        {
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
+
+            Object.Destroy(gameObject);
         }
 
         IEnumerator Track()

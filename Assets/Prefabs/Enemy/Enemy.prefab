@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3504815646147952303}
   - component: {fileID: 2756912382821401110}
   - component: {fileID: 4190566476324648876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c546bd6205260b8418ccf7d0fa942e3c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6889929594099046257}
   - component: {fileID: -622713514424997332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588cfda5416681d4a9311068cb5fb350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 7836298003601819632, guid: 957f6e6af7b2ea34e8b23c33cb4a6b17,
+    type: 3}

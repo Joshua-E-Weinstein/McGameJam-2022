@@ -15,6 +15,7 @@ namespace McgillTeam3
         private const int MAX_ENEMY_SPAWN = 10;
         private const float MIN_ENEMY_RANGE = 2.5f;
         private const float MAX_ENEMY_RANGE = 5f;
+        private const float WARN_TIME = 3f;
 
         [SerializeField]
         // Player controller will be used
@@ -23,13 +24,18 @@ namespace McgillTeam3
         [SerializeField]
         private GameObject enemy;
 
+        [SerializeField]
+        private ParticleSystem warningParticles;
+
         private bool isEventRunning;
+        private bool isTrackingEcho;
         private ShaderController shaderController;
 
         // Start is called before the first frame update
         void Start()
         {
             isEventRunning = false;
+            isTrackingEcho = false;
             shaderController = player.GetComponent<ShaderController>();
             StartCoroutine(Run());
         }
@@ -37,8 +43,15 @@ namespace McgillTeam3
         private void Update()
         {
             // check if event is running and we are echolocating (Check Input or Player class? ).
-            if (isEventRunning && shaderController._echolocating)
+            if (isEventRunning)
+                UpdateParticles();
+            if (isTrackingEcho && shaderController._echolocating)
                 SpawnEnemies();
+        }
+
+        private void UpdateParticles()
+        {
+            warningParticles.transform.position = player.transform.position;
         }
 
         IEnumerator Run()
@@ -48,6 +61,10 @@ namespace McgillTeam3
                 yield return new WaitForSeconds(Random.Range(MIN_COOLDOWN_TIME, MAX_COOLDOWN_TIME));
 
                 StartEvent();
+
+                yield return new WaitForSeconds(WARN_TIME);
+
+                isTrackingEcho = true;
 
                 yield return new WaitForSeconds(Random.Range(MIN_EVENT_TIME, MAX_EVENT_TIME));
 
@@ -60,6 +77,8 @@ namespace McgillTeam3
             if (isEventRunning)
                 return;
             isEventRunning = true;
+            warningParticles.Clear();
+            warningParticles.Play();
             Debug.Log("RED EYE EVENT STARTED");
         }
 
@@ -69,6 +88,8 @@ namespace McgillTeam3
             if (!isEventRunning)
                 return;
             isEventRunning = false;
+            isTrackingEcho = false;
+            warningParticles.Stop();
             Debug.Log("RED EYE EVENT FINISHED");
         }
 
