@@ -52,7 +52,7 @@ namespace McgillTeam3
 
         void SpawnBats(){
             int count = Random.Range(1, 3);
-            delay += 4 * (count + Random.Range(0, 3));
+            delay += 4 * (count + Random.Range(0, 2));
 
             float spawnX = 20f;
             while (count > 0){
@@ -63,7 +63,7 @@ namespace McgillTeam3
         }
 
         void SpawnSnake(){
-            delay += 8;
+            delay += 6;
             GameObject.Instantiate(snake, new Vector3 (24f, 4, -5), new Quaternion());
         }
     }

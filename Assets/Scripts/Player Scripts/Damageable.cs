@@ -38,10 +38,10 @@ namespace McgillTeam3
                 if (invuln <= 0f){
                     if (collision.gameObject.tag == "Damaging")
                     HP -= 1;
+                    SoundManager.Instance.PlayClip("Hurt", damageSound, false, 0.5f);
                     if (HP >= 0) heartAnimators[HP].SetTrigger("LoseHeart");
                     if (HP <= 0) Die();
                     else {
-                        SoundManager.Instance.PlayClip("Hurt", damageSound, false, 0.5f);
                         invuln = INVULN_DURATION;
                         playerAnimator.SetBool("Invulnerable", true);
                     }
