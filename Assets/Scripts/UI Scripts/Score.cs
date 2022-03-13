@@ -8,7 +8,7 @@ namespace McgillTeam3.Player_Scripts
         [SerializeField] private TextMeshProUGUI scoreText;
         public static int PlayerScore;
         [SerializeField] private int highScore;
-        [SerializeField] private int scoreMultiplier = 1;
+        [SerializeField] private int scoreMultiplier = 10;
 
         [field: SerializeField] public bool EnableScoreCounting { get; set; } 
 

@@ -7,15 +7,15 @@ namespace McgillTeam3
     public class RedEyesEvent : MonoBehaviour
     {
         private const float MIN_COOLDOWN_TIME = 5f;
-        private const float MAX_COOLDOWN_TIME = 6f;
+        private const float MAX_COOLDOWN_TIME = 20f;
         private const float MIN_EVENT_TIME = 3f;
-        private const float MAX_EVENT_TIME = 10f;
+        private const float MAX_EVENT_TIME = 5f;
 
         private const int MIN_ENEMY_SPAWN = 5;
         private const int MAX_ENEMY_SPAWN = 10;
         private const float MIN_ENEMY_RANGE = 2.5f;
         private const float MAX_ENEMY_RANGE = 5f;
-        private const float WARN_TIME = 3f;
+        private const float WARN_TIME = 1f;
 
         [SerializeField]
         // Player controller will be used

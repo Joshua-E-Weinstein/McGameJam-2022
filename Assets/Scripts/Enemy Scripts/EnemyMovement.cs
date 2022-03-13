@@ -15,9 +15,9 @@ namespace McgillTeam3
         [SerializeField]
         private SpriteRenderer spriteRenderer;
 
-        private const float TRACKING_TIME = 5f;
-        private const int GLOW_COUNT = 5;
-        private const float SPEED = 5f;
+        private const float TRACKING_TIME = 2f;
+        private const int GLOW_COUNT = 2;
+        private const float SPEED = 7f;
 
         private GameObject player;
         private bool isTracking;

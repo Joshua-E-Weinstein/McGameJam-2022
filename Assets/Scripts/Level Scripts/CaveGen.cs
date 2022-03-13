@@ -72,7 +72,7 @@ namespace McgillTeam3
             }
 
             // Scrolls left
-            scrollPos -= speed;
+            scrollPos -= speed * SpeedController.speed;
         }
 
         float lerpF(float a, float b, float t){

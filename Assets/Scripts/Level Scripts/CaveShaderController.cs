@@ -19,7 +19,7 @@ namespace McgillTeam3
         // Update is called once per frame
         void FixedUpdate()
         {
-            offset.Set(offset[0] + caveGenerator.speed, 0f);
+            offset.Set(offset[0] + caveGenerator.speed * SpeedController.speed, 0f);
             wallMaterial.SetVector("_Offset", offset);
         }
     }
