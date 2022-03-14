@@ -64,7 +64,7 @@ namespace McgillTeam3
 
         void SpawnSnake(){
             delay += 6;
-            GameObject.Instantiate(snake, new Vector3 (24f, 4, -5), new Quaternion());
+            GameObject.Instantiate(snake, new Vector3 (24f, 5, -5), new Quaternion());
         }
     }
 }
