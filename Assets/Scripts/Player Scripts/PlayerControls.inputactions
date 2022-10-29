@@ -1,0 +1,54 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "Echolocation",
+            "id": "a9b6e75b-a1f6-46cc-971e-4b24509a8bcd",
+            "actions": [
+                {
+                    "name": "Echolocate",
+                    "type": "Button",
+                    "id": "e99cdd7e-0358-4e10-b412-e0465866693e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Approach",
+                    "type": "Value",
+                    "id": "933a651b-b4ad-4744-b84a-1f25365a28ea",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0c26eb54-bde6-4b3d-b411-fc1fe9ce873f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Echolocate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ffa10ef-88a5-4b1f-9943-446a9957f4c0",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse+Keyboard",
+                    "action": "Approach",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

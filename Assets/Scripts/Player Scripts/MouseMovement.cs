@@ -1,38 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace McgillTeam3
 {
     public class MouseMovement : MonoBehaviour
     {
         [SerializeField] Rigidbody2D rigidBody;
-        [SerializeField] private FloatReference idle_distance;
 
-        [SerializeField] private FloatReference acceleration;
-        [SerializeField] private FloatReference deceleration;
-        [SerializeField] private FloatReference max_move_speed;
+        private float move_speed = 2f;
 
-        private float move_speed = 0f;
+        private Vector2 _targetPos = Vector2.zero;
+
+        [SerializeField] LineRenderer tether;
+
+        void OnApproach(InputValue value)
+        {
+            _targetPos = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
+        }
 
         void Update()
         {
-            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; // Direction towards the mouse.
+            Vector2 direction = _targetPos - (Vector2) transform.position; // Direction towards the mouse.
 
-            if (direction.magnitude >= idle_distance){ // Mouse outside idle
-                // Increase move speed.
-                move_speed += acceleration;
-                if (move_speed > max_move_speed.Value) move_speed = max_move_speed.Value; // Clamp to max speed
-            } 
+            Vector2 point0 = _targetPos - 0.1f * direction.normalized;
+            tether.SetPosition(0, new Vector3(point0[0], point0[1], -5));
 
-            else { // Mouse inside idle
-                // Decrease move speed.
-                move_speed -= deceleration;
-                if (move_speed < 0f) move_speed = 0f; // Clamp to 0 speed.
-            }
+            Vector2 point1 = (Vector2) transform.position + 1f * direction.normalized;
+            tether.SetPosition(1, new Vector3(point1[0], point1[1], -5));
 
+            if (direction.magnitude <= 1.1f && tether.enabled) tether.enabled = false;
+            else if (direction.magnitude > 0.6f && !tether.enabled) tether.enabled = true;
+            
             // Update velocity towards mouse.
-            rigidBody.velocity = direction.normalized * move_speed;
+            rigidBody.velocity = move_speed * direction;
         }
     }
 }
